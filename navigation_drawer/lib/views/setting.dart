@@ -6,11 +6,15 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Setting Screen', style: TextStyle(color: Colors.red, fontSize: 30),)
-          ],
+        child: ListView.separated(
+          separatorBuilder: (context, index) => Divider(
+            color: Colors.green,
+          ),
+          itemCount: 30,
+          itemBuilder: (context, index) => Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Setting $index", style: TextStyle(color: Colors.black, fontSize: 17),)
+          ),
         ),
       ),
     );

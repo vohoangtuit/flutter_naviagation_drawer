@@ -9,11 +9,15 @@ class NotificationScreen extends StatelessWidget {
         title: Text('Notification'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Notification Screen', style: TextStyle(color: Colors.blue, fontSize: 20),)
-          ],
+        child: ListView.separated(
+          separatorBuilder: (context, index) => Divider(
+            color: Colors.green,
+          ),
+          itemCount: 30,
+          itemBuilder: (context, index) => Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Notification $index", style: TextStyle(color: Colors.amberAccent, fontSize: 17),)
+          ),
         ),
       ),
     );
